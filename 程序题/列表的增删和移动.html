@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>列表的增删和移动</title>
+    <style>
+      body{background:#ddd;text-align:center}
+      .list{display:inline-block;margin-top:20px;padding:40px;border-radius:8px;background:#fff;color:#333;text-align:left;font-size:13px}
+      .list-ul{list-style:none;margin:0;padding:0}
+      .list-option{padding:6px 0;}
+      .list-input{width:300px;border:1px solid #ccc;padding:4px;font-size:14px;color:#333}
+      .list-input:hover{background:#effaff}
+      .list-btn span{color:#0065A0;;cursor:pointer}
+      .list-btn span:hover{text-decoration:underline}
+      .list-btn b{text-align:center;background-color:#D6EDFF;border-radius:6px;width:20px;height:20px;display:inline-block;margin:0 2px;cursor:pointer;color:#238FCE;border:1px solid #B3DBF8;float:left}
+      .list-bottom{margin-top:5px}
+      .list-add-show{color:#f60;cursor:pointer}
+      .list-add-show:before{position:relative;top:1px;margin-right:5px;content:"+";font-weight:700;font-size:16px;font-family:arial}
+      .list-add-show span:hover{text-decoration:underline}
+      .list-add-area{margin-top:5px}
+      .list-add-add{cursor:pointer;margin-left:5px}
+      .list-add-cancel{cursor:pointer;margin-left:4px}
+      .list-add-input{width:180px;border:1px solid #ccc;padding:4px;font-size:14px;color:#333}
+      .list-add-input:hover{background:#effaff}
+      .list-tmp{display:none}
+      .list-hide{display:none}
+    </style>
+  </head>
+  <body>
+    <form>
+      <div class="list">
+        <ul class="list-ul">
+          <li class="list-option">
+            <input class="list-input" type="text" name="list[]">
+            <span class="list-btn">
+              <span class="list-up">[上移]</span>
+              <span class="list-down">[下移]</span>
+              <span class="list-del">[删除]</span>
+            </span>
+          </li>
+        </ul>
+        <div class="list-bottom">
+          <span class="list-add-show"><span>添加项目</span></span>
+          <div class="list-add-area list-hide">
+            添加到列表：
+            <input class="list-add-input" type="text" name="list[]">
+            <input class="list-add-add" type="button" value="添加">
+            <input class="list-add-cancel" type="button" value="取消">
+          </div>
+        </div>
+      </div>
+    </form>
+    <script src="SmartList.js"></script>
+    <script>
+      SmartList('list', ['PHP', 'JavaScript']);
+    </script>
+  </body>
+</html>

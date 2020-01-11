@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>网页计算器</title>
+  </head>
+  <body>
+    <p>整数1：<input id="num1" type="text"></p>
+    <p>整数2：<input id="num2" type="text"></p>
+    <p>
+      <input type="button" value="相加" onclick="calc(add)">
+      <input type="button" value="相减" onclick="calc(sub)">
+      <input type="button" value="相乘" onclick="calc(mul)">
+      <input type="button" value="相除" onclick="calc(div)">
+    </p>
+    <p>结果：<input id="result" type="text" readonly></p>
+    <script>
+      function calc(func) {
+        var result = document.getElementById('result');
+        var num1 = parseInt(document.getElementById('num1').value);
+        var num2 = parseInt(document.getElementById('num2').value);
+        if (isNaN(num1) || isNaN(num2)) {
+          alert('请输入数字');
+          return false;
+        }
+        result.value = func(num1, num2);
+      }
+      function add(num1, num2) {    // 加法
+        return num1 + num2;
+      }
+      function sub(num1, num2) {    // 减法
+        return num1 - num2;
+      }
+      function mul(num1, num2) {    // 乘法
+        return num1 * num2;
+      }
+      function div(num1, num2) {    // 除法
+        if (num2 === 0) {
+          alert('除数不能为0');
+          return '';
+        }
+        return num1 / num2;
+      }
+    </script>
+  </body>
+</html>

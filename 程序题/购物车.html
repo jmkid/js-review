@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <style>
+      .cart{width: 700px;padding: 0 10px 10px;border: 1px solid #D5E5F5;}
+      .cart-title {margin-bottom: 10px;font-size: 14px;border-bottom: 1px solid #AED2FF;line-height: 30px;height: 30px;font-weight: 700;text-indent: 15px;color: #333;font-family: 'Microsoft YaHei';}
+      .cart-table{width: 100%;margin: 0 auto;border-collapse: collapse;font-size: 12px;font-family: Verdana,"Microsoft YaHei";color: #333;}
+      .cart-table th{border-bottom: 2px solid #B2D1FF;font-weight: normal;height: 35px;line-height: 23px;}
+      .cart-item {background-color: #FAFCFF;border-bottom: 1px dotted #84B3FD;}
+      .cart-item td{height: 55px;text-align: center;}
+      .cart-item .cart-txt-left{text-align:left;}
+      .cart-name{color: #3366D4;font-weight: bold;}
+      .cart-subtotal{color: #FF3334;font-weight: bold;}
+      .cart-reduce,.cart-add{display:inline-block;width: 16px;height: 16px;line-height:16px;color: #FFF;background-color: #BDBDBD;border: 0;cursor: pointer;border-radius: 2px;font-family:'Arial';font-size:13.3333px;}
+      .cart-reduce:hover,.cart-add:hover{background-color: #FF9900;}
+      .cart-num {margin: 5px;width: 35px;text-align: center;height: 20px;line-height: 20px;padding: 0 3px;display:inline-block;background:#fff;border:1px solid #bbb}
+      .cart-del,.cart-all{color: #3366D4;}
+      .cart-del:hover,.cart-all:hover{text-decoration:underline;cursor:pointer}
+      .cart-bottom{height: 55px;text-align:right}
+      .cart-bottom .cart-all{position:relative;top:1px}
+      .cart-total-price{color: #FF3334;font-weight: bold;font-size: 16px;}
+      .cart-bottom-btn{color: #FFF;font-size: 14px;font-weight: 600;cursor: pointer;margin: 0 20px;background: #FE8502;border: 1px solid #FF6633;border-radius: 5px 5px 5px 5px;padding: 6px 12px;}
+      .cart-bottom-btn:hover{background: #FF6600;}
+    </style>
+  </head>
+  <body>
+    <div class="cart">
+      <div class="cart-title">我的购物车</div>
+      <table class="cart-table">
+        <tr>
+          <th width="60"><span class="cart-all">全选</span></th><th>商品</th><th width="120">单价</th><th width="100">数量</th><th width="120">小计</th><th width="80">操作</th>
+        </tr>
+        <tr class="cart-item">
+          <td><input class="cart-check" type="checkbox" checked></td>
+          <td class="cart-txt-left"><span class="cart-name">Loading...</span></td>
+          <td><span class="cart-price">0</span></td>
+          <td><span class="cart-reduce" >-</span><span class="cart-num">0</span><span class="cart-add">+</span></td>
+          <td><span class="cart-subtotal">0</span></td>
+          <td><span class="cart-del">删除</span></td>
+        </tr>
+        <tr class="cart-bottom">
+          <td colspan="6">
+            <span class="cart-bottom-span">已选择 <span class="cart-total-num">0</span> 件商品</span>
+            <span class="cart-bottom-span">总计：<span class="cart-total-price">0</span></span>
+            <span class="cart-bottom-btn">提交订单</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <script src="ShopCart.js"></script>
+    <script>
+      ShopCart('cart', [
+        {name: 'JavaScript实战', price: 45.8, num: 1},
+        {name: 'PHP基础案例教程', price: 49.8, num: 2},
+        {name: 'HTML+CSS网页制作', price: 45.2, num: 5},
+        {name: 'Java基础入门', price: 45, num: 8},
+      ]);
+    </script>
+  </body>
+</html>

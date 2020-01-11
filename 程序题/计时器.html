@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var timer = null,
+            c = 0;
+
+        function timedCount() {
+            document.getElementById('num').value = c;
+            ++c;
+        }
+
+        function startCount() {
+            timer = setInterval(timedCount, 1000);
+        }
+
+        function stopCount() {
+            clearInterval(timer);
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" value="开始计数" onclick="startCount()">
+    <input type="text" id="num">
+    <input type="button" value="停止计数" onclick="stopCount()">
+</body>
+
+</html>
